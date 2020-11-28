@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <div class="container text-center">
+        <h3>player1: {{players["player1"]}} => {{ userSymbol["player1"] }}</h3>
+        <h3>player1: {{players["player2"]}} => {{ userSymbol["player2"] }}</h3>
+
+       
+    	<table border="1">
+    		<tr>
+    			<td class="top-L" onclick="move('top-L')"></td>
+    			<td class="top-M" onclick="move('top-M')"></td>
+    			<td class="top-R" onclick="move('top-R')"></td>
+    		</tr>
+    		<tr>
+    			<td class="mid-L" onclick="move('mid-L')"></td>
+    			<td class="mid-M" onclick="move('mid-M')"></td>
+    			<td class="mid-R" onclick="move('mid-R')"></td>
+    		</tr>
+    		<tr>
+    			<td class="low-L" onclick="move('low-L')"></td>
+    			<td class="low-M" onclick="move('low-M')"></td>
+    			<td class="low-R" onclick="move('low-R')"></td>
+    		</tr>
+    		
+    	</table>
+        <div class="turn">
+            {{ players["player1"] }}'s turn
+            
+        </div>
+        <input type="hidden" class="determineTurn" value="1">
+        <div class="msg"></div>
+
+
+    </div>
+    <a href="/clearall">
+<button class="clearall btn btn-danger"> ClearAll</button></a>
+<a href="/playagain">
+<button class="playagain btn btn-danger"> play again</button></a>
+{% endblock %} 
+   
